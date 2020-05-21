@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="kitchenservice-1.0.0">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/services/Kitchen-Service/target/kitchenservice-1.0.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
