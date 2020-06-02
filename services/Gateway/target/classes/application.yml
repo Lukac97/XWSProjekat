@@ -40,3 +40,9 @@ spring:
               - Path=/comment/**
             filters:
               - RewritePath=/comment/(?<path>.*), /$\{path}
+        - id: cart
+            uri: lb://cart
+            predicates:
+              - Path=/cart/**
+            filters:
+              - RewritePath=/cart/(?<path>.*), /$\{path}
