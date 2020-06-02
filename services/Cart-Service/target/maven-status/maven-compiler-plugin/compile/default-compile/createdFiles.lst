@@ -1,4 +1,0 @@
-messaging/messagingservice/domain/Message.class
-messaging/messagingservice/service/MessageService.class
-messaging/messagingservice/MessagingServiceApplication.class
-messaging/messagingservice/repository/MessageRepository.class

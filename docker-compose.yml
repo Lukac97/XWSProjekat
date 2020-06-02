@@ -68,17 +68,6 @@ services:
     depends_on:
       - consul-server
 
-  cart-service:
-    image: cart-service
-    build:
-      context: ./services/Cart-Service
-      dockerfile: Dockerfile
-    tty: true
-    networks:
-      - static-network
-    depends_on:
-      - consul-server
-
   gateway:
     image: gateway
     build:
@@ -95,7 +84,8 @@ services:
 
 
 
-
+networks:
+  sample_db:
 
 
 
