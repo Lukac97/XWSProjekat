@@ -1,13 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f2a06ec-20e4-48ac-abfa-04b2a2f993b2" name="Default Changelist" comment="" />
+    <list default="true" id="2f2a06ec-20e4-48ac-abfa-04b2a2f993b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advertisementservice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/advertisementservice-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/advertisementservice-1.0.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/AdvertisementServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/domain/AvailableDates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/domain/Pricelist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/domain/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/repository/AvailableDatesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/repository/PricelistRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/repository/VehicleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/service/AvailableDatesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/service/PricelistService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advertisement/advertisementservice/service/VehicleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/commentservice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/CommentServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/domain/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/domain/CommentRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/repository/CommentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/repository/CommentRequestRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/service/CommentRequestService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/classes/comment/commentservice/service/CommentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/commentservice-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/commentservice-1.0.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Comment-Service/target/test-classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/classes/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/classes/gateway/gateway/GatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/gateway-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/gateway-1.0.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Gateway/target/test-classes/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/classes/messaging/messagingservice/MessagingServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/classes/messaging/messagingservice/domain/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/classes/messaging/messagingservice/repository/MessageRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/classes/messaging/messagingservice/service/MessageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/messagingservice-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/messagingservice-1.0.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Messaging-Service/target/test-classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/RentingServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/BundleRent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/RentHistory$StatusHist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/RentHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/RentRequest$StatusReq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/RentRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/RentStatement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/domain/StartEnd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/repository/BundleRentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/repository/CartRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/repository/RentHistoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/repository/RentRequestRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/repository/RentStatementRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/repository/StartEndRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/service/BundleRentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/service/CartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/service/RentHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/service/RentRequestService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/service/RentStatementService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/classes/renting/rentingservice/service/StartEndService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/rentingservice-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/rentingservice-1.0.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Renting-Service/target/test-classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/UserServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/domain/Administrator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/domain/Agent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/domain/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/domain/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/repository/AdministratorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/repository/AgentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/repository/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/repository/PersonRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/service/AdministratorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/service/AgentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/classes/user/userservice/service/PersonService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/test-classes/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/userservice-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../User-Service/target/userservice-1.0.0.jar.original" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1c5dnjeXIEfFZYcY0v30xXymhzD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,7 +142,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -31,13 +161,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="660" y="240" key="FileChooserDialogImpl" timestamp="1589822856326">
+    <state x="660" y="240" key="FileChooserDialogImpl" timestamp="1591179402763">
       <screen x="65" y="24" width="1615" height="1026" />
     </state>
-    <state x="660" y="240" key="FileChooserDialogImpl/65.24.1615.1026@65.24.1615.1026" timestamp="1589822856326" />
-    <state x="186" y="124" key="new project wizard" timestamp="1589822823884">
+    <state x="660" y="240" key="FileChooserDialogImpl/65.24.1615.1026@65.24.1615.1026" timestamp="1591179402763" />
+    <state x="482" y="222" width="895" height="600" key="NewModule_or_Project.wizard" timestamp="1591178764145">
       <screen x="65" y="24" width="1615" height="1026" />
     </state>
-    <state x="186" y="124" key="new project wizard/65.24.1615.1026@65.24.1615.1026" timestamp="1589822823884" />
+    <state x="482" y="222" width="895" height="600" key="NewModule_or_Project.wizard/65.24.1615.1026@65.24.1615.1026" timestamp="1591178764145" />
+    <state x="360" y="101" key="SettingsEditor" timestamp="1591178792840">
+      <screen x="65" y="24" width="1615" height="1026" />
+    </state>
+    <state x="360" y="101" key="SettingsEditor/65.24.1615.1026@65.24.1615.1026" timestamp="1591178792840" />
+    <state x="533" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1591179111527">
+      <screen x="65" y="24" width="1615" height="1026" />
+    </state>
+    <state x="533" y="352" key="com.intellij.ide.util.TipDialog/65.24.1615.1026@65.24.1615.1026" timestamp="1591179111527" />
+    <state x="186" y="124" key="new project wizard" timestamp="1591179161287">
+      <screen x="65" y="24" width="1615" height="1026" />
+    </state>
+    <state x="186" y="124" key="new project wizard/65.24.1615.1026@65.24.1615.1026" timestamp="1591179161287" />
   </component>
 </project>

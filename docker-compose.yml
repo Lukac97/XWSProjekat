@@ -84,9 +84,6 @@ services:
 
 
 
-networks:
-  sample_db:
-
 
 
 networks:

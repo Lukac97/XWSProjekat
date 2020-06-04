@@ -9,40 +9,47 @@ spring:
       discovery:
         locator:
           enabled: true
+
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: ['*']
+
       routes:
         - id: user
-            uri: lb://user
-            predicates:
-              - Path=/user/**
-            filters:
-              - RewritePath=/user/(?<path>.*), /$\{path}
+          uri: lb://user
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<path>.*), /$\{path}
         - id: renting
-            uri: lb://renting
-            predicates:
-              - Path=/renting/**
-            filters:
-              - RewritePath=/renting/(?<path>.*), /$\{path}
+          uri: lb://renting
+          predicates:
+            - Path=/renting/**
+          filters:
+            - RewritePath=/renting/(?<path>.*), /$\{path}
         - id: advertisement
-            uri: lb://advertisement
-            predicates:
-              - Path=/advertisement/**
-            filters:
-              - RewritePath=/advertisement/(?<path>.*), /$\{path}
+          uri: lb://advertisement
+          predicates:
+            - Path=/advertisement/**
+          filters:
+            - RewritePath=/advertisement/(?<path>.*), /$\{path}
         - id: messaging
-            uri: lb://messaging
-            predicates:
-              - Path=/messaging/**
-            filters:
-              - RewritePath=/messaging/(?<path>.*), /$\{path}
+          uri: lb://messaging
+          predicates:
+            - Path=/messaging/**
+          filters:
+            - RewritePath=/messaging/(?<path>.*), /$\{path}
         - id: comment
-            uri: lb://comment
-            predicates:
-              - Path=/comment/**
-            filters:
-              - RewritePath=/comment/(?<path>.*), /$\{path}
+          uri: lb://comment
+          predicates:
+            - Path=/comment/**
+          filters:
+            - RewritePath=/comment/(?<path>.*), /$\{path}
         - id: cart
-            uri: lb://cart
-            predicates:
-              - Path=/cart/**
-            filters:
-              - RewritePath=/cart/(?<path>.*), /$\{path}
+          uri: lb://cart
+          predicates:
+            - Path=/cart/**
+          filters:
+            - RewritePath=/cart/(?<path>.*), /$\{path}

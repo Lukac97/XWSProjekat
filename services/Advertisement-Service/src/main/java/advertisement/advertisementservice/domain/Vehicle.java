@@ -16,20 +16,21 @@ public class Vehicle implements Serializable {
     @Column(nullable = false)
     private long agentId;
 
-    @Column(nullable = false)
-    private String vehicleBrand;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "brand_model", referencedColumnName = "brandmodel_id", nullable = false)
+    private BrandModel vehicleBrandModel;
 
-    @Column(nullable = false)
-    private String vehicleModel;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fuel_type", referencedColumnName = "fueltype_id", nullable = false)
+    private FuelType fuelType;
 
-    @Column(nullable = false)
-    private String fuelType;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "transmission_type", referencedColumnName = "transmissiontype_id", nullable = false)
+    private TransmissionType transmissionType;
 
-    @Column(nullable = false)
-    private String transmission;
-
-    @Column(nullable = false)
-    private String vehicleType;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "vehicle_class", referencedColumnName = "vehicleclass_id", nullable = false)
+    private VehicleClass vehicleClass;
 
     @Column(nullable = false)
     private double mileage;
@@ -50,8 +51,8 @@ public class Vehicle implements Serializable {
     private double maxKm;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "vehicleAvailability", joinColumns = @JoinColumn(name="vehicle_id"),
-            inverseJoinColumns = @JoinColumn(name="availabledates_id"))
+    @JoinTable(name = "vehicleAvailability", joinColumns = @JoinColumn(name = "vehicle_id"),
+            inverseJoinColumns = @JoinColumn(name = "availabledates_id"))
     private List<AvailableDates> vehicleAvailability;
 
     @ManyToOne
@@ -59,6 +60,23 @@ public class Vehicle implements Serializable {
     private Pricelist vehicle_pricelist;
 
     public Vehicle() {
+    }
+
+    public Vehicle(long id, long agentId, BrandModel vehicleBrandModel, FuelType fuelType, TransmissionType transmissionType, VehicleClass vehicleClass, double mileage, boolean cdwProtection, String location, long seats, long childrenSeats, double maxKm, List<AvailableDates> vehicleAvailability, Pricelist vehicle_pricelist) {
+        this.id = id;
+        this.agentId = agentId;
+        this.vehicleBrandModel = vehicleBrandModel;
+        this.fuelType = fuelType;
+        this.transmissionType = transmissionType;
+        this.vehicleClass = vehicleClass;
+        this.mileage = mileage;
+        this.cdwProtection = cdwProtection;
+        this.location = location;
+        this.seats = seats;
+        this.childrenSeats = childrenSeats;
+        this.maxKm = maxKm;
+        this.vehicleAvailability = vehicleAvailability;
+        this.vehicle_pricelist = vehicle_pricelist;
     }
 
     public long getId() {
@@ -69,44 +87,44 @@ public class Vehicle implements Serializable {
         this.id = id;
     }
 
-    public String getVehicleBrand() {
-        return vehicleBrand;
+    public long getAgentId() {
+        return agentId;
     }
 
-    public void setVehicleBrand(String vehicleBrand) {
-        this.vehicleBrand = vehicleBrand;
+    public void setAgentId(long agentId) {
+        this.agentId = agentId;
     }
 
-    public String getVehicleModel() {
-        return vehicleModel;
+    public BrandModel getVehicleBrandModel() {
+        return vehicleBrandModel;
     }
 
-    public void setVehicleModel(String vehicleModel) {
-        this.vehicleModel = vehicleModel;
+    public void setVehicleBrandModel(BrandModel vehicleBrandModel) {
+        this.vehicleBrandModel = vehicleBrandModel;
     }
 
-    public String getFuelType() {
+    public FuelType getFuelType() {
         return fuelType;
     }
 
-    public void setFuelType(String fuelType) {
+    public void setFuelType(FuelType fuelType) {
         this.fuelType = fuelType;
     }
 
-    public String getTransmission() {
-        return transmission;
+    public TransmissionType getTransmissionType() {
+        return transmissionType;
     }
 
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
+    public void setTransmissionType(TransmissionType transmissionType) {
+        this.transmissionType = transmissionType;
     }
 
-    public String getVehicleType() {
-        return vehicleType;
+    public VehicleClass getVehicleClass() {
+        return vehicleClass;
     }
 
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
+    public void setVehicleClass(VehicleClass vehicleClass) {
+        this.vehicleClass = vehicleClass;
     }
 
     public double getMileage() {
@@ -149,6 +167,14 @@ public class Vehicle implements Serializable {
         this.childrenSeats = childrenSeats;
     }
 
+    public double getMaxKm() {
+        return maxKm;
+    }
+
+    public void setMaxKm(double maxKm) {
+        this.maxKm = maxKm;
+    }
+
     public List<AvailableDates> getVehicleAvailability() {
         return vehicleAvailability;
     }
@@ -163,21 +189,5 @@ public class Vehicle implements Serializable {
 
     public void setVehicle_pricelist(Pricelist vehicle_pricelist) {
         this.vehicle_pricelist = vehicle_pricelist;
-    }
-
-    public double getMaxKm() {
-        return maxKm;
-    }
-
-    public void setMaxKm(double maxKm) {
-        this.maxKm = maxKm;
-    }
-
-    public long getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(long agentId) {
-        this.agentId = agentId;
     }
 }

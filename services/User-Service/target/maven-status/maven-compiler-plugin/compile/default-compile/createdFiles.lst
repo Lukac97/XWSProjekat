@@ -1,1 +1,13 @@
+user/userservice/service/PersonService.class
+user/userservice/service/AdministratorService.class
+user/userservice/repository/PersonRepository.class
+user/userservice/domain/Agent.class
 user/userservice/UserServiceApplication.class
+user/userservice/repository/AgentRepository.class
+user/userservice/domain/Administrator.class
+user/userservice/domain/Person.class
+user/userservice/service/AgentService.class
+user/userservice/repository/CustomerRepository.class
+user/userservice/service/CustomerService.class
+user/userservice/domain/Customer.class
+user/userservice/repository/AdministratorRepository.class
