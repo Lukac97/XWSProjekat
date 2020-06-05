@@ -13,14 +13,13 @@ public class TransmissionType implements Serializable {
     private long id;
 
     @Column(nullable = false, unique = true)
-    private String fuelType;
+    private String transmissionType;
 
     public TransmissionType() {
     }
 
-    public TransmissionType(long id, String fuelType) {
-        this.id = id;
-        this.fuelType = fuelType;
+    public TransmissionType(String transmissionType) {
+        this.transmissionType = transmissionType;
     }
 
     public long getId() {
@@ -31,11 +30,11 @@ public class TransmissionType implements Serializable {
         this.id = id;
     }
 
-    public String getFuelType() {
-        return fuelType;
+    public String getTransmissionType() {
+        return transmissionType;
     }
 
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
+    public void setTransmissionType(String transmissionType) {
+        this.transmissionType = transmissionType;
     }
 }

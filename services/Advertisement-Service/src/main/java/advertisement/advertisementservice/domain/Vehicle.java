@@ -57,12 +57,12 @@ public class Vehicle implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "vehicle_pricelist", referencedColumnName = "pricelist_id", nullable = true)
-    private Pricelist vehicle_pricelist;
+    private Pricelist vehiclePricelist;
 
     public Vehicle() {
     }
 
-    public Vehicle(long id, long agentId, BrandModel vehicleBrandModel, FuelType fuelType, TransmissionType transmissionType, VehicleClass vehicleClass, double mileage, boolean cdwProtection, String location, long seats, long childrenSeats, double maxKm, List<AvailableDates> vehicleAvailability, Pricelist vehicle_pricelist) {
+    public Vehicle(long id, long agentId, BrandModel vehicleBrandModel, FuelType fuelType, TransmissionType transmissionType, VehicleClass vehicleClass, double mileage, boolean cdwProtection, String location, long seats, long childrenSeats, double maxKm, List<AvailableDates> vehicleAvailability, Pricelist vehiclePricelist) {
         this.id = id;
         this.agentId = agentId;
         this.vehicleBrandModel = vehicleBrandModel;
@@ -76,7 +76,7 @@ public class Vehicle implements Serializable {
         this.childrenSeats = childrenSeats;
         this.maxKm = maxKm;
         this.vehicleAvailability = vehicleAvailability;
-        this.vehicle_pricelist = vehicle_pricelist;
+        this.vehiclePricelist = vehiclePricelist;
     }
 
     public long getId() {
@@ -183,11 +183,11 @@ public class Vehicle implements Serializable {
         this.vehicleAvailability = vehicleAvailability;
     }
 
-    public Pricelist getVehicle_pricelist() {
-        return vehicle_pricelist;
+    public Pricelist getVehiclePricelist() {
+        return vehiclePricelist;
     }
 
-    public void setVehicle_pricelist(Pricelist vehicle_pricelist) {
-        this.vehicle_pricelist = vehicle_pricelist;
+    public void setVehiclePricelist(Pricelist vehiclePricelist) {
+        this.vehiclePricelist = vehiclePricelist;
     }
 }

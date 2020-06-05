@@ -25,8 +25,7 @@ public class AvailableDates implements Serializable {
     public AvailableDates() {
     }
 
-    public AvailableDates(long id, LocalDate startDate, LocalDate endDate) {
-        this.id = id;
+    public AvailableDates(LocalDate startDate, LocalDate endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }
