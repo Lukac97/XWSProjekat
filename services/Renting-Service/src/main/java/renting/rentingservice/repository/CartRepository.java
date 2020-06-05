@@ -11,8 +11,8 @@ import java.util.List;
 public interface CartRepository extends CrudRepository<Cart, Long> {
 
     Cart findById(long id);
-    Cart findByVehicleId(long vehicleId);
-    Cart findByCustomerId(long customerId);
+    List<Cart> findByVehicleId(long vehicleId);
+    List<Cart> findByCustomerId(long customerId);
     List<Cart> findAll();
 
     Cart save(Cart cart);

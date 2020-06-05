@@ -25,11 +25,11 @@ public class CartService {
         return this.cartRepository.findById(id);
     }
 
-    public Cart findByVehicleId(long vehicleId){
+    public List<Cart> findByVehicleId(long vehicleId){
         return this.cartRepository.findByVehicleId(vehicleId);
     }
 
-    public Cart findByCustomerId(long customerId){
+    public List<Cart> findByCustomerId(long customerId){
         return this.cartRepository.findByCustomerId(customerId);
     }
 

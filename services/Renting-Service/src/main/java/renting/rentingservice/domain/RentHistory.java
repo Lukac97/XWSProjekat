@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class RentHistory implements Serializable{
 
-    enum StatusHist{
+    public enum StatusHist{
         PAID,
         CANCELED
     }
@@ -29,6 +29,9 @@ public class RentHistory implements Serializable{
 
     @Column(nullable = false)
     private long agentId;
+
+    @Column(nullable = false)
+    private long vehicleId;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "rental_period_hist", referencedColumnName = "time_id", nullable = false)
@@ -95,5 +98,13 @@ public class RentHistory implements Serializable{
 
     public void setRentStatement(RentStatement rentStatement) {
         this.rentStatement = rentStatement;
+    }
+
+    public long getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(long vehicleId) {
+        this.vehicleId = vehicleId;
     }
 }

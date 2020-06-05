@@ -2,7 +2,7 @@ package renting.rentingservice.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -14,12 +14,17 @@ public class StartEnd implements Serializable{
     private long id;
 
     @Column(nullable = false)
-    private Timestamp startTime;
+    private LocalDate startTime;
 
     @Column(nullable = false)
-    private Timestamp endTime;
+    private LocalDate endTime;
 
     public StartEnd() {
+    }
+
+    public StartEnd(LocalDate startTime, LocalDate endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public long getId() {
@@ -30,19 +35,19 @@ public class StartEnd implements Serializable{
         this.id = id;
     }
 
-    public Timestamp getStartTime() {
+    public LocalDate getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Timestamp startTime) {
+    public void setStartTime(LocalDate startTime) {
         this.startTime = startTime;
     }
 
-    public Timestamp getEndTime() {
+    public LocalDate getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Timestamp endTime) {
+    public void setEndTime(LocalDate endTime) {
         this.endTime = endTime;
     }
 }
