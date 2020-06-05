@@ -95,7 +95,7 @@ public class RentRequestController {
         }else{
             for(Long key : agentCounter.keySet()){
                 for(RentRequest rerq : agentCounter.get(key)){
-                    rentRequestService.save(agentCounter.get(key).get(0));
+                    rentRequestService.save(rerq);
                 }
             }
         }

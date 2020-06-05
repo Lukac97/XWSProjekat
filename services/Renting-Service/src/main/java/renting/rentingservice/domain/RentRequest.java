@@ -21,7 +21,7 @@ public class RentRequest implements Serializable{
     @JoinColumn(name="bundle_req", referencedColumnName = "bundlerent_id", nullable = true)
     private BundleRent bundle;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private StatusReq status;
 
     @Column(nullable = false)
