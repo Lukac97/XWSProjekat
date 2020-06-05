@@ -1,7 +1,0 @@
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/CommentServiceApplication.java
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/repository/CommentRepository.java
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/service/CommentRequestService.java
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/repository/CommentRequestRepository.java
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/service/CommentService.java
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/domain/CommentRequest.java
-/home/student/Documents/XWS/XWSProjekat/services/Comment-Service/src/main/java/comment/commentservice/domain/Comment.java

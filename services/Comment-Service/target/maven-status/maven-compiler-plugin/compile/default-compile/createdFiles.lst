@@ -1,7 +1,0 @@
-comment/commentservice/CommentServiceApplication.class
-comment/commentservice/service/CommentRequestService.class
-comment/commentservice/domain/Comment.class
-comment/commentservice/repository/CommentRepository.class
-comment/commentservice/domain/CommentRequest.class
-comment/commentservice/repository/CommentRequestRepository.class
-comment/commentservice/service/CommentService.class
