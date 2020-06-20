@@ -1,0 +1,93 @@
+version: '3'
+services:
+
+  consul-server:
+    image: consul-server
+    build:
+      context: ./consul-server
+      dockerfile: Dockerfile
+    tty: true
+    ports: 
+      - "8500:8500"
+    networks:
+      static-network:
+        ipv4_address: 172.20.0.2
+
+  user-service:
+    image: user-service
+    build:
+      context: ./services/User-Service
+      dockerfile: Dockerfile
+    tty: true
+    networks:
+      - static-network
+    depends_on:
+      - consul-server
+
+  renting-service:
+    image: renting-service
+    build:
+      context: ./services/Renting-Service
+      dockerfile: Dockerfile
+    tty: true
+    networks:
+      - static-network
+    depends_on:
+      - consul-server
+
+  advertisement-service:
+    image: advertisement-service
+    build:
+      context: ./services/Advertisement-Service
+      dockerfile: Dockerfile
+    tty: true
+    networks:
+      - static-network
+    depends_on:
+      - consul-server
+
+  comment-service:
+    image: comment-service
+    build:
+      context: ./services/Comment-Service
+      dockerfile: Dockerfile
+    tty: true
+    networks:
+      - static-network
+    depends_on:
+      - consul-server
+
+  messaging-service:
+    image: messaging-service
+    build:
+      context: ./services/Messaging-Service
+      dockerfile: Dockerfile
+    tty: true
+    networks:
+      - static-network
+    depends_on:
+      - consul-server
+
+  gateway:
+    image: gateway
+    build:
+      context: ./services/Gateway
+      dockerfile: Dockerfile
+    tty: true
+    ports: 
+      - "8080:8080"
+    networks:
+      - static-network
+    depends_on:
+      - consul-server
+
+
+
+
+
+
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
