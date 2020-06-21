@@ -10,12 +10,15 @@ import java.util.List;
 @DiscriminatorValue(value = "CUSTOMER")
 public class Customer extends Person implements Serializable{
 
-    @Column(nullable = false)
+    @Column()
     private String name;
 
-    @Column(nullable = false)
+    @Column()
     private String surname;
 
+    public Customer(){
+        super();
+    }
 
     public Customer(long id, String email, String password, String phoneNumber, String name, String surname) {
         super(id, email, password, phoneNumber);

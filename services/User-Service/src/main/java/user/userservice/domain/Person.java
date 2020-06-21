@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Person implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id", nullable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     private long id;
 
     @Column(nullable = false, unique = true)

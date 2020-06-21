@@ -9,8 +9,12 @@ import java.io.Serializable;
 @DiscriminatorValue(value = "ADMINISTRATOR")
 public class Administrator  extends Person implements Serializable{
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String adminName;
+
+    public Administrator(){
+        super();
+    }
 
     public Administrator(long id, String email, String password, String phoneNumber, String adminName) {
         super(id, email, password, phoneNumber);

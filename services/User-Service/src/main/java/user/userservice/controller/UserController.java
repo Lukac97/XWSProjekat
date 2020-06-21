@@ -36,21 +36,21 @@ public class UserController {
     }
 
     @GetMapping("/type/{id}")
-    public ResponseEntity<?> getUserType(@PathVariable("id") long id){
+    public String getUserType(@PathVariable("id") long id){
         if((Long) id == null){
-            return ResponseEntity.ok("NULL");
+            return "NULL";
         }
         if(personService.findById(id) == null){
-            return ResponseEntity.ok("DOESNT_EXIST");
+            return "DOESNT_EXIST";
         }
         if(personService.findById(id) instanceof Customer){
-            return ResponseEntity.ok("CUSTOMER");
+            return "CUSTOMER";
         }else if(personService.findById(id) instanceof Agent){
-            return ResponseEntity.ok("AGENT");
+            return "AGENT";
         }else if(personService.findById(id) instanceof Administrator){
-            return ResponseEntity.ok("ADMINISTRATOR");
+            return "ADMINISTRATOR";
         }else{
-            return ResponseEntity.ok("UNEXPECTED");
+            return "UNEXPECTED";
         }
     }
 }

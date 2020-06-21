@@ -9,8 +9,12 @@ import java.io.Serializable;
 @DiscriminatorValue(value = "AGENT")
 public class Agent extends Person implements Serializable{
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String companyName;
+
+    public Agent(){
+        super();
+    }
 
     public Agent(long id, String email, String password, String phoneNumber, String companyName) {
         super(id, email, password, phoneNumber);

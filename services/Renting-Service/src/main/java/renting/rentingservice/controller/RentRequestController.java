@@ -1,6 +1,7 @@
 package renting.rentingservice.controller;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
@@ -10,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import renting.rentingservice.client.AdvertisementClient;
+import renting.rentingservice.client.UserClient;
 import renting.rentingservice.domain.*;
 import renting.rentingservice.dto.*;
 import renting.rentingservice.service.BundleRentService;
@@ -42,6 +44,7 @@ public class RentRequestController {
     private RentHistoryService rentHistoryService;
     private BundleRentService bundleRentService;
     private AdvertisementClient advertisementClient;
+    private UserClient userClient;
 
     @Autowired
     public RentRequestController(
@@ -49,13 +52,15 @@ public class RentRequestController {
             RentRequestService rentRequestService,
             BundleRentService bundleRentService,
             RentHistoryService rentHistoryService,
-            AdvertisementClient advertisementClient
+            AdvertisementClient advertisementClient,
+            UserClient userClient
     ) {
         this.cartService = cartService;
         this.rentRequestService = rentRequestService;
         this.bundleRentService = bundleRentService;
         this.rentHistoryService = rentHistoryService;
         this.advertisementClient = advertisementClient;
+        this.userClient = userClient;
     }
 
     @GetMapping("/containertest")
@@ -77,6 +82,9 @@ public class RentRequestController {
         if(rentReq.getVehicleId().size() != rentReq.getAgentId().size()){
             return ResponseEntity.ok("There must be the same number of agents and vehicles!");
         }
+        if(!this.userClient.getUserType(rentReq.getCustomerId()).equals("CUSTOMER")){
+            return ResponseEntity.ok("You are not a customer!");
+        }
         LocalDate startDate = LocalDate.parse(rentReq.getStartDate());
         LocalDate endDate = LocalDate.parse(rentReq.getEndDate());
 //        TODO: Check if selected dates are valid and free + get agentID/check if its valid
@@ -84,28 +92,28 @@ public class RentRequestController {
 //            provera za vreme
 //        }
 
+        CheckAvailabiltyDTO dto = new CheckAvailabiltyDTO();
+
+        List<Long> vidList = new ArrayList<Long>();
+        for(Long vid : rentReq.getVehicleId()) {
+            vidList.add(vid);
+        }
+        dto.setVehicleId(vidList);
+        dto.setStartDate(rentReq.getStartDate());
+        dto.setEndDate(rentReq.getEndDate());
+
+        String responseGotten = advertisementClient.checkIfVehicleIsAvailable(dto);
+
+        if(responseGotten.equals("false")){
+            return ResponseEntity.ok("Desired period of time is not available for one of the selected vehicles!");
+        }else if(!responseGotten.equals("true")){
+            return ResponseEntity.ok(responseGotten);
+        }
+
+
         HashMap<Long, List<RentRequest>> agentCounter = new HashMap<Long, List<RentRequest>>();
 
         for(int i=0; i<rentReq.getVehicleId().size(); i++){
-//            RestTemplate restTemplate = new RestTemplate();
-//            HttpHeaders headers = new HttpHeaders();
-//            headers.setContentType(MediaType.APPLICATION_JSON);
-//            JSONObject jsonObj = new JSONObject();
-//            jsonObj.put("vehicleId",rentReq.getVehicleId());
-//            jsonObj.put("startDate",rentReq.getStartDate());
-//            jsonObj.put("endDate",rentReq.getEndDate());
-//            HttpEntity<String> requestBody = new HttpEntity<String>(jsonObj.toString(), headers);
-//
-//
-//            Boolean isAvailable = true;
-//            try {
-//                isAvailable = restTemplate.postForObject("http://localhost:8080/advertisement/isAvailable", requestBody, Boolean.class);
-//            }catch (NullPointerException ex){
-//                return ResponseEntity.ok("NullPointerException occured");
-//            }
-//            if(!isAvailable){
-//                return ResponseEntity.ok("Desired period of time is not available for one of the selected vehicles!");
-//            }
             RentRequest rerq = new RentRequest();
             rerq.setVehicleId(rentReq.getVehicleId().get(i));
             rerq.setAgentId(rentReq.getAgentId().get(i));
@@ -157,22 +165,43 @@ public class RentRequestController {
         }
         RentRequest rrq = rentRequestService.findById(arDTO.getRentreqId());
 
+        if(!this.userClient.getUserType(arDTO.getAgentId()).equals("AGENT")){
+            return ResponseEntity.ok("You are not an agent!");
+        }
         if(rrq.getAgentId() != arDTO.getAgentId()){
             return ResponseEntity.ok("This request does not belong to you!");
         }
 
         if(rrq.getBundle() == null){
+            UpdateAvailabiltyDTO dto = new UpdateAvailabiltyDTO();
+            dto.setAvailable(false);
+            dto.setStartDate(rrq.getRentalPeriod().getStartTime().toString());
+            dto.setEndDate(rrq.getRentalPeriod().getEndTime().toString());
+            dto.setVehicleId(rrq.getVehicleId());
+            String response = this.advertisementClient.updateVehicleAvailability(rrq.getAgentId(), dto);
+
+            if(!response.equals("Successfully update availability of chosen vehicle!")){
+                return ResponseEntity.ok(response);
+            }
             RentHistory rh = new RentHistory(rrq);
             rh.setStatus(RentHistory.StatusHist.PAID);
             rentHistoryService.save(rh);
             rentRequestService.deleteById(rrq.getId());
             cancelRequests(new CancelRequestsDTO(rrq.getVehicleId(), rrq.getRentalPeriod().getStartTime().toString(),
                     rrq.getRentalPeriod().getEndTime().toString()));
-
-            //TODO: Pozivanje funkcije za dodavanje zauzeca vozila u Advertisement-Service
         }else{
             List<RentRequest> reqs = rentRequestService.findByBundle(rrq.getBundle().getId());
             for(RentRequest req: reqs){
+                UpdateAvailabiltyDTO dto = new UpdateAvailabiltyDTO();
+                dto.setAvailable(false);
+                dto.setStartDate(req.getRentalPeriod().getStartTime().toString());
+                dto.setEndDate(req.getRentalPeriod().getEndTime().toString());
+                dto.setVehicleId(req.getVehicleId());
+                String response = this.advertisementClient.updateVehicleAvailability(req.getAgentId(), dto);
+
+                if(!response.equals("Successfully update availability of chosen vehicle!")){
+                    return ResponseEntity.ok(response);
+                }
                 RentHistory rh = new RentHistory(req);
                 rh.setStatus(RentHistory.StatusHist.PAID);
                 rentHistoryService.save(rh);
@@ -180,11 +209,9 @@ public class RentRequestController {
                 cancelRequests(new CancelRequestsDTO(req.getVehicleId(), req.getRentalPeriod().getStartTime().toString(),
                         req.getRentalPeriod().getEndTime().toString()));
             }
-
-            //TODO: Pozivanje funkcije za dodavanje zauzeca vozila u Advertisement-Service
         }
 
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok("Successfully accepted selected rent requests!");
     }
 
     @PostMapping("/cancelRequests")
