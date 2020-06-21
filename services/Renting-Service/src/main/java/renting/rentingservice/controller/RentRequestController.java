@@ -173,16 +173,16 @@ public class RentRequestController {
         }
 
         if(rrq.getBundle() == null){
-            UpdateAvailabiltyDTO dto = new UpdateAvailabiltyDTO();
-            dto.setAvailable(false);
-            dto.setStartDate(rrq.getRentalPeriod().getStartTime().toString());
-            dto.setEndDate(rrq.getRentalPeriod().getEndTime().toString());
-            dto.setVehicleId(rrq.getVehicleId());
-            String response = this.advertisementClient.updateVehicleAvailability(rrq.getAgentId(), dto);
-
-            if(!response.equals("Successfully update availability of chosen vehicle!")){
-                return ResponseEntity.ok(response);
-            }
+//            UpdateAvailabiltyDTO dto = new UpdateAvailabiltyDTO();
+//            dto.setAvailable(false);
+//            dto.setStartDate(rrq.getRentalPeriod().getStartTime().toString());
+//            dto.setEndDate(rrq.getRentalPeriod().getEndTime().toString());
+//            dto.setVehicleId(rrq.getVehicleId());
+//            String response = this.advertisementClient.updateVehicleAvailability(rrq.getAgentId(), dto);
+//
+//            if(!response.equals("Successfully update availability of chosen vehicle!")){
+//                return ResponseEntity.ok(response);
+//            }
             RentHistory rh = new RentHistory(rrq);
             rh.setStatus(RentHistory.StatusHist.PAID);
             rentHistoryService.save(rh);
@@ -192,16 +192,16 @@ public class RentRequestController {
         }else{
             List<RentRequest> reqs = rentRequestService.findByBundle(rrq.getBundle().getId());
             for(RentRequest req: reqs){
-                UpdateAvailabiltyDTO dto = new UpdateAvailabiltyDTO();
-                dto.setAvailable(false);
-                dto.setStartDate(req.getRentalPeriod().getStartTime().toString());
-                dto.setEndDate(req.getRentalPeriod().getEndTime().toString());
-                dto.setVehicleId(req.getVehicleId());
-                String response = this.advertisementClient.updateVehicleAvailability(req.getAgentId(), dto);
-
-                if(!response.equals("Successfully update availability of chosen vehicle!")){
-                    return ResponseEntity.ok(response);
-                }
+//                UpdateAvailabiltyDTO dto = new UpdateAvailabiltyDTO();
+//                dto.setAvailable(false);
+//                dto.setStartDate(req.getRentalPeriod().getStartTime().toString());
+//                dto.setEndDate(req.getRentalPeriod().getEndTime().toString());
+//                dto.setVehicleId(req.getVehicleId());
+//                String response = this.advertisementClient.updateVehicleAvailability(req.getAgentId(), dto);
+//
+//                if(!response.equals("Successfully update availability of chosen vehicle!")){
+//                    return ResponseEntity.ok(response);
+//                }
                 RentHistory rh = new RentHistory(req);
                 rh.setStatus(RentHistory.StatusHist.PAID);
                 rentHistoryService.save(rh);

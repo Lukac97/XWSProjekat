@@ -157,8 +157,14 @@ public class VehicleController {
         if(!userClient.getUserType(id).equals("AGENT")) {
             return ResponseEntity.ok("You do not have the permission to do this!");
         }
+        if(updateDTO.getStartDate() == null || updateDTO.getEndDate() == null){
+            return ResponseEntity.ok("Please enter start and end date!");
+        }
         if(LocalDate.parse(updateDTO.getStartDate()).isAfter(LocalDate.parse(updateDTO.getEndDate()))){
             return ResponseEntity.ok("Wrong dates entered!");
+        }
+        if((Long) updateDTO.getVehicleId() == null){
+            return ResponseEntity.ok("No vehicle entered!");
         }
 
         Vehicle v = vehicleService.findById(updateDTO.getVehicleId());
@@ -204,24 +210,28 @@ public class VehicleController {
             }
             v.getVehicleAvailability().add(newAvDa);
         }else{
-            for (AvailableDates avda : v.getVehicleAvailability()) {
-                if(updateStartDate.isAfter(avda.getStartDate()) && updateStartDate.isBefore(avda.getEndDate())
-                        && updateEndDate.isAfter(avda.getEndDate())){
-                    avda.setEndDate(updateStartDate);
-                    //----
-                }else if(updateStartDate.isBefore(avda.getStartDate())
-                        && updateEndDate.isAfter(avda.getStartDate()) && updateEndDate.isBefore(avda.getEndDate())){
-                    avda.setStartDate(updateEndDate);
-                }else if(updateStartDate.isAfter(avda.getStartDate()) && updateStartDate.isBefore(avda.getEndDate())
-                        && updateEndDate.isBefore(avda.getEndDate())){
-                    v.getVehicleAvailability().remove(avda);
-                    v.getVehicleAvailability().add(new AvailableDates(avda.getStartDate(),updateStartDate));
-                    v.getVehicleAvailability().add(new AvailableDates(updateEndDate, avda.getEndDate()));
-                }else if((updateStartDate.isBefore(avda.getStartDate()) || updateStartDate.isEqual(avda.getStartDate()))
-                        && (updateEndDate.isAfter(avda.getEndDate()) || updateEndDate.isEqual(avda.getEndDate()))){
-                    v.getVehicleAvailability().remove(avda);
+            if(v.getVehicleAvailability()==null){
+                return ResponseEntity.ok("vehicle availability je null");
+            }
+            if(v.getVehicleAvailability().size()==0){
+                return ResponseEntity.ok("No availability defined");
+            }
+            List<AvailableDates> avda = v.getVehicleAvailability();
+            List<AvailableDates> avdanew = new ArrayList<AvailableDates>();
+            for (int i=0; i<avda.size(); i++) {
+
+                if(updateStartDate.isAfter(avda.get(i).getStartDate()) && updateStartDate.isBefore(avda.get(i).getEndDate())
+                        && updateEndDate.isBefore(avda.get(i).getEndDate())){
+                    avdanew.add(new AvailableDates(avda.get(i).getStartDate(),updateStartDate));
+                    avdanew.add(new AvailableDates(updateEndDate, avda.get(i).getEndDate()));
+                    break;
+                }else if(updateStartDate.isAfter(avda.get(i).getEndDate()) || updateEndDate.isBefore(avda.get(i).getStartDate())){
+                    avdanew.add(avda.get(i));
+                }else{
+                    return ResponseEntity.ok("Wrong start/end dates");
                 }
             }
+            v.setVehicleAvailability(avdanew);
         }
         vehicleService.save(v);
 
